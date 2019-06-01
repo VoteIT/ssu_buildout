@@ -1,0 +1,86 @@
+
+/*
+
+//$brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7
+*/
+
+$brand-primary:         rgb(246 29 30);
+$brand-success:         #5cb85c !default;
+$brand-info:            #5bc0de !default;
+$brand-warning:         #f0ad4e !default;
+$brand-danger:          #d9534f !default;
+
+
+//
+// Variables - SSU overrides
+// --------------------------------------------------
+
+
+// Colours
+// default: $voteit-dark-blue: #0a243d;
+$voteit-dark-blue: $brand-primary;
+$voteit-unread: $brand-primary;
+
+$navbar-voteit-color:                      #fff;
+$navbar-voteit-bg:                         $voteit-dark-blue !default;
+
+
+// VoteIT navbar taken from Inverse navbar
+// Reset voteit navbar basics
+$navbar-voteit-color:                      #fff;
+$navbar-voteit-bg:                         $voteit-dark-blue !default;
+$navbar-voteit-border:                     darken($navbar-voteit-bg, 10%) !default;
+
+// VoteIT navbar links
+$navbar-voteit-link-color:                 $navbar-voteit-color;
+$navbar-voteit-link-hover-color:           #fff !default;
+$navbar-voteit-link-hover-bg:              transparent !default;
+$navbar-voteit-link-active-color:          $navbar-voteit-link-hover-color !default;
+$navbar-voteit-link-active-bg:             lighten($navbar-voteit-bg, 5%) !default;
+$navbar-voteit-link-disabled-color:        #444 !default;
+$navbar-voteit-link-disabled-bg:           transparent !default;
+
+// VoteIT navbar brand label
+$navbar-voteit-brand-color:                $navbar-voteit-link-color !default;
+$navbar-voteit-brand-hover-color:          #fff !default;
+$navbar-voteit-brand-hover-bg:             transparent !default;
+
+// VoteIT navbar toggle
+$navbar-voteit-toggle-hover-bg:            $navbar-voteit-link-active-bg !default;
+$navbar-voteit-toggle-icon-bar-bg:         #fff !default;
+$navbar-voteit-toggle-border-color:        $navbar-voteit-link-active-bg !default;
+
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`. */
+$font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
+$font-family-base:        BrandonText-Regular, Arial !default;
+
+
+$font-size-base:          18px !default;
+$font-size-large:         ceil(($font-size-base * 1.25)) !default;
+$font-size-small:         ceil(($font-size-base * 0.85)) !default;
+
+$font-size-h1:            floor(($font-size-base * 2.4)) !default;
+$font-size-h2:            floor(($font-size-base * 2.15)) !default;
+$font-size-h3:            ceil(($font-size-base * 1.7)) !default;
+$font-size-h4:            ceil(($font-size-base * 1.25)) !default;
+$font-size-h5:            $font-size-base !default;
+$font-size-h6:            ceil(($font-size-base * 0.85)) !default;
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.428571429 !default; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+/* Headings */
+$headings-font-family:    SsuDisplay-Regular, BrandonText-Bold;
+$headings-font-weight:    400 !default;
+$headings-line-height:    1.2 !default;
+$headings-color:          inherit !default;

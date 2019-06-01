@@ -1,0 +1,3 @@
+[run]
+source = ssu_theme
+omit = ssu_theme/test*
