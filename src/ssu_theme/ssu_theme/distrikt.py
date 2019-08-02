@@ -67,6 +67,17 @@ def profile_distrikt(context, request, va, **kw):
         """.format(distrikt)
 
 
+@view_action('voteit_debate_userdata', 'fullname')
+def speaker_fullname(user, request, va, view=None, **kw):
+    if user:
+        fullname = user.title
+        distrikt = getattr(user, 'ssu_distrikt', '')
+        if distrikt:
+            fullname += " (%s)" % distrikt
+        return fullname
+    return view.no_user_txt
+
+
 def includeme(config):
     from voteit.core.models.user import User
     User.add_field('ssu_distrikt')
