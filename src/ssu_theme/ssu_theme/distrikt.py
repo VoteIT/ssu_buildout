@@ -5,6 +5,9 @@ import deform
 import colander
 from arche.interfaces import ISchemaCreatedEvent
 from arche.schemas import UserSchema
+from betahaus.viewcomponent import view_action
+from pyramid.events import subscriber
+from voteit.core.models.interfaces import IUser
 
 
 SSU_DISTRIKT = (
@@ -41,6 +44,7 @@ SELECTABLE_DISTRIKT = [("", "(Inget)")]
 SELECTABLE_DISTRIKT.extend([(x, x) for x in SSU_DISTRIKT])
 
 
+@subscriber([UserSchema, ISchemaCreatedEvent])
 def add_distrikt(schema, event):
     schema.add(
         colander.SchemaNode(
@@ -54,7 +58,16 @@ def add_distrikt(schema, event):
     )
 
 
+@view_action('user_info', 'profile_distrikt', interface = IUser, priority = 20)
+def profile_distrikt(context, request, va, **kw):
+    distrikt = getattr(context, 'ssu_distrikt', '')
+    if distrikt:
+        return """<h5>SSU-distrikt</h5>
+            <p>{}</p>
+        """.format(distrikt)
+
+
 def includeme(config):
-    config.add_subscriber(add_distrikt, [UserSchema, ISchemaCreatedEvent])
     from voteit.core.models.user import User
     User.add_field('ssu_distrikt')
+    config.scan(__name__)
