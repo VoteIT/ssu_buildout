@@ -27,7 +27,6 @@ $navbar-voteit-bg:                         $voteit-dark-blue !default;
 
 // VoteIT navbar taken from Inverse navbar
 // Reset voteit navbar basics
-$navbar-voteit-color:                      #fff;
 $navbar-voteit-bg:                         $voteit-dark-blue !default;
 $navbar-voteit-border:                     darken($navbar-voteit-bg, 10%) !default;
 
@@ -37,7 +36,7 @@ $navbar-voteit-link-hover-color:           #fff !default;
 $navbar-voteit-link-hover-bg:              transparent !default;
 $navbar-voteit-link-active-color:          $navbar-voteit-link-hover-color !default;
 $navbar-voteit-link-active-bg:             lighten($navbar-voteit-bg, 5%) !default;
-$navbar-voteit-link-disabled-color:        #444 !default;
+$navbar-voteit-link-disabled-color:        #eee !default;
 $navbar-voteit-link-disabled-bg:           transparent !default;
 
 // VoteIT navbar brand label

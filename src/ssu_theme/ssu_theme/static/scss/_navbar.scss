@@ -86,3 +86,163 @@ body.left-fixed-active #agenda-toggler {
         margin-right: 10px;
     }
 }
+
+
+// Built from: Inverse navbar
+/* This whole section is copied from voteit.core, where it's deprecated. */
+.navbar-voteit {
+  background-color: $navbar-voteit-bg;
+  border-color: $navbar-voteit-border;
+  border-bottom: 0;
+  height: $navbar-height;
+
+  /* Float all for the standard nav in VoteIT */
+  .navbar-nav, .navbar-brand, .navbar-header, .navbar-nav > li {
+      float: left;
+  }
+
+  .navbar-right {
+      float: right;
+  }
+
+  /* FIXME: Attach right nav as fixed instead.
+  Make sure it has a background and goes on top of the title of the meeting!
+  */
+
+  .navbar-brand {
+
+    color: $navbar-voteit-brand-color;
+    &:hover,
+    &:focus {
+      color: $navbar-voteit-brand-hover-color;
+      background-color: $navbar-voteit-brand-hover-bg;
+    }
+  }
+
+  .navbar-text {
+    color: $navbar-voteit-color;
+  }
+
+  .navbar-nav {
+
+    margin: 0 -15px;
+
+    > li > a {
+      color: $navbar-voteit-link-color;
+      /*
+      padding-top:    15px;
+      padding-bottom: 15px;
+      */
+
+      &:hover,
+      &:focus {
+        color: $navbar-voteit-link-hover-color;
+        background-color: $navbar-voteit-link-hover-bg;
+      }
+    }
+    > .active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $navbar-voteit-link-active-color;
+        background-color: $navbar-voteit-link-active-bg;
+      }
+    }
+    > .disabled > a {
+      &,
+      &:hover,
+      &:focus {
+        color: $navbar-voteit-link-disabled-color;
+        background-color: $navbar-voteit-link-disabled-bg;
+      }
+    }
+  }
+
+  // Darken the responsive nav toggle
+  .navbar-toggle {
+    border-color: $navbar-voteit-toggle-border-color;
+    &:hover,
+    &:focus {
+      background-color: $navbar-voteit-toggle-hover-bg;
+    }
+    .icon-bar {
+      background-color: $navbar-voteit-toggle-icon-bar-bg;
+    }
+  }
+
+  .navbar-collapse,
+  .navbar-form {
+    border-color: darken($navbar-voteit-bg, 7%);
+  }
+
+  // Dropdowns
+  .navbar-nav {
+    > .open > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: $navbar-voteit-link-active-bg;
+        color: $navbar-voteit-link-active-color;
+      }
+    }
+
+    @media (max-width: $grid-float-breakpoint-max) {
+      // Dropdowns get custom display
+      .open .dropdown-menu {
+        > .dropdown-header {
+          border-color: $navbar-voteit-border;
+        }
+        .divider {
+          background-color: $navbar-voteit-border;
+        }
+        > li > a {
+          color: $navbar-voteit-link-color;
+          &:hover,
+          &:focus {
+            color: $navbar-voteit-link-hover-color;
+            background-color: $navbar-voteit-link-hover-bg;
+          }
+        }
+        > .active > a {
+          &,
+          &:hover,
+          &:focus {
+            color: $navbar-voteit-link-active-color;
+            background-color: $navbar-voteit-link-active-bg;
+          }
+        }
+        > .disabled > a {
+          &,
+          &:hover,
+          &:focus {
+            color: $navbar-voteit-link-disabled-color;
+            background-color: $navbar-voteit-link-disabled-bg;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-link {
+    color: $navbar-voteit-link-color;
+    &:hover {
+      color: $navbar-voteit-link-hover-color;
+    }
+  }
+
+  .btn-link {
+    color: $navbar-voteit-link-color;
+    &:hover,
+    &:focus {
+      color: $navbar-voteit-link-hover-color;
+    }
+    &[disabled],
+    fieldset[disabled] & {
+      &:hover,
+      &:focus {
+        color: $navbar-voteit-link-disabled-color;
+      }
+    }
+  }
+}
+/* END Deprecated nav */
